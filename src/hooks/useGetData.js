@@ -4,7 +4,7 @@ const api = "https://us-central1-gndx-cv.cloudfunctions.net/me";
 
 const useGetData = () => {
 
-  const [data, setdata] = useState({});
+  const [mydata, setdata] = useState([]);
 
   useEffect(() => {
     fetch(api)
@@ -12,7 +12,7 @@ const useGetData = () => {
       .then(data => setdata(data))
   }, []);
 
-  return data;
+  return mydata;
 
 }
 

@@ -1,5 +1,6 @@
 // Será un componentes presentacional porque sólo presetara información
 import React from 'react';
+import Social from './Social';
 
 const About = ({ avatar, name, profession, bio, address, social }) => (
   <div className="About">
@@ -22,7 +23,7 @@ const About = ({ avatar, name, profession, bio, address, social }) => (
         <p>{address}</p>
       </div>
       <div className="About-social">
-
+        <Social social={social} />
       </div>
     </div>
   </div>

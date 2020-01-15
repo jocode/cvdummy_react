@@ -111,3 +111,22 @@ Nuestros componentes visuales solo muestran texto de prueba, por ahora. Vamos a 
 
 
 > Como **recomendación** colocar los nombres de las propiedades igual a los nombres que vienen en la API
+
+_**useEffect**_, funciona luego que se montan los componentes y luego trasmite la información a los componentes.
+
+**IMPORTANTE** Para tener en cuenta a la hora de inicializar los datos en el estado de los _hooks_. En mi caso se presentaba un problema al renderizar los datos, porque useEffect funciona luego que se han montado los componenes. En mi caso la validación no funcionaba debido a que estaba inicializado los valores con un objeto vació y no como arreglo vació, al usar un objeto, no se puede validar con el `length`
+
+Archivo de custom hooks _**useGetData.js**_
+```js
+// Correcto
+const [mydata, setdata] = useState([]);
+
+// Da problemas con el objeto
+const [mydata, setdata] = useState({});
+```
+
+Experiencias y certificados
+
+## Pasando datos a nuestro componente Skills
+
+En esta clase debemos hacer dos cosas: cambiar el texto temporal de los componentes faltantes por la información real de nuestra API y construir el último de nuestros componentes visuales, el que se encarga de mostrar nuestras redes sociales ([src/components/Social.jsx](../src/components/Social.jsx)).
