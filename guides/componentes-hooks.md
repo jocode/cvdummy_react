@@ -130,3 +130,4 @@ Experiencias y certificados
 ## Pasando datos a nuestro componente Skills
 
 En esta clase debemos hacer dos cosas: cambiar el texto temporal de los componentes faltantes por la información real de nuestra API y construir el último de nuestros componentes visuales, el que se encarga de mostrar nuestras redes sociales ([src/components/Social.jsx](../src/components/Social.jsx)).
+
