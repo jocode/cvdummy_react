@@ -38,3 +38,18 @@ Vamos a dividir nuestro proyecto por ramas: develop para trabajar nuestra aplica
 
 Más información sobre Travis CI: https://travis-ci.org
 Más información sobre Github Pages: https://pages.github.com
+
+
+### Github
+
+Creamos una nueva rama llamada Develop
+
+- `git checkout -b develop`
+
+- `git status`
+
+- `git add .`
+
+- `git commit -m "Message"`
+
+- `git push origin develop`
