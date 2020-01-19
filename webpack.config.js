@@ -1,6 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+// Iconos y manifest
+const FaviconsWebPackPlugin = require('favicons-webpack-plugin');
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -11,8 +14,7 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
@@ -31,6 +33,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./public/index.html",
       filename: "./index.html"
-    })
+    }),
+    new FaviconsWebPackPlugin('./public/icono.png'),
   ]
 }
