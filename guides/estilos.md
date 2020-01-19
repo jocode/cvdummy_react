@@ -68,3 +68,71 @@ Otra forma de añadir iconos de Font Awesome a nuestras aplicaciónes con React:
 Crea una galería de fuentes a partir de iconos con IcoMoon: https://youtu.be/_5r4PFi8gDc
 
 
+## Creando las barras de progreso
+
+Vamos a construir algunos componentes para mostrar nuestra experiencia con las mejores tecnologías de desarrollo.
+
+Uno de estos componentes va a tener dos líneas: una para mostrar el porcentaje de conocimiento (por ejemplo 80%) y otra para mostrar el espacio total de nuestro componente (100%).
+
+**IMPORTANTE** Se debe revisar bien la sintaxis en el CSS del styled-component para que no se presenten errores en el renderizado del componente. Recordar que se puede pasar por parámetro estilos al componente que hemos creado.
+
+
+## Animaciones con Styled Components
+
+_Styled Components_ también nos permite crear animaciones de _css_ con `keyframes`, solo _**debemos importar la función keyframes de styled-components**_, crear una variable con las animaciones y añadirlas a los estilos de nuestros componentes creados con la función styled en la propiedad animation:
+
+```js
+import { keyframes } from 'styled-components';
+
+const move = keyframes`
+from { ... }
+to { ... }
+`;
+
+const MyComponent = styled.tag`
+animation: ${move} ... ...;
+```
+
+
+## Estilos globales
+
+Styled Components también nos permite crear estilos globales, es decir, estilos para las etiquetas generales (por ejemplo, `html`, `body` o `main`) o estilos reutilizables a partir de clases (por ejemplo, `.d-none` para ocultar componentes o `.t-red` para definir textos con mensajes importantes).
+
+Para esto debemos importar la función createGlobalStyle de styled-components, crear un componente con los estilos globales e incluir este componente en nuestra aplicación:
+
+```js
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+body { ... }
+`;
+
+const App = () => {
+return (
+...
+<GlobalStyle />
+...
+);
+}
+```
+
+En este caso el estilo global lo creamos en un nuevo componente para agregarlo a [App.jsx](../src/container/App.jsx)
+
+
+
+## Haciendo nuestro portafolio responsivo
+
+_Styled Components_ también nos _permite_ _añadir **media queries**_ a nuestros componentes, ni siquiera debemos importar una función especial del paquete de styled-components, solo debemos escribirlas común y corriente con el resto de estilos de cada componente:
+
+```js
+const MyComponent = styled.tag`
+@media screen and (...) {
+...
+}
+`;
+```
+
+Los media queries lo agregamos al componente [Main.jsx](../src/components/Main.jsx), porque aquí es donde definimos cómo se debe mostrar el contenido dependiendo del tamaño y orientación del dispositivo.
+
+Solo debemos agregar el media query para el componente que deseamos y así de sencillo agregamos un diseño responsive al sitio web.
+
