@@ -19,7 +19,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     background: #F5F5F5;
-
   }
 `;
 
@@ -28,6 +27,9 @@ const App = () => {
 
   // Cuando empiece la aplicación, carga los datos en el estado
   const data = useGetData();
+
+  // const data = { data };
+  console.log(data);
 
   return (data.length === 0) ? <h1>Cargando...</h1> : (
     <Main>
