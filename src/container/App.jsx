@@ -9,6 +9,7 @@ import Education from '../components/Education';
 import Experience from '../components/Experience';
 import Certificates from '../components/Certificates';
 import Skills from '../components/Skills';
+import Loading from '../components/Loading';
 
 import useGetData from '../hooks/useGetData';
 
@@ -28,10 +29,7 @@ const App = () => {
   // Cuando empiece la aplicación, carga los datos en el estado
   const data = useGetData();
 
-  // const data = { data };
-  console.log(data);
-
-  return (data.length === 0) ? <h1>Cargando...</h1> : (
+  return (data.length === 0) ? <Loading /> : (
     <Main>
       <GlobalStyle />
       <Sidebar>
